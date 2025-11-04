@@ -71,7 +71,7 @@ body {
   --accent: hsl(212, 86%, 64%);
 }
 
-.item h4 {
+.item h2 {
   color: hsl(234, 12%, 34%);
   font-weight: 600;
   margin-bottom: 0.5rem;
