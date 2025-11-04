@@ -5,11 +5,21 @@
   padding: 0;
 }
 
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-dark: hsl(234, 12%, 34%);
+  --clr-grey: hsl(212, 6%, 44%);
+  --clr-red: hsl(0, 78%, 62%);
+  --clr-cyan: hsl(180, 62%, 55%);
+  --clr-orange: hsl(34, 97%, 64%);
+  --clr-blue: hsl(212, 86%, 64%);
+}
+
 body {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  background-color: hsl(0, 0%, 100%);
-  font-size: 0.9375rem; /* 15px */
+  background-color: var(--clr-white);
+  font-size: clamp(0.875rem, 2vw, 1rem);
   line-height: 1.6;
 }
 
@@ -25,73 +35,75 @@ body {
 
 .main-title .light {
   font-weight: 200;
-  color: hsl(212, 6%, 44%);
+  color: var(--clr-grey);
 }
 
 .main-title .bold {
   font-weight: 600;
-  color: hsl(234, 12%, 34%);
+  color: var(--clr-dark);
 }
 
 .text {
   max-width: 32ch;
   margin: 0 auto 2rem;
-  color: hsl(212, 6%, 44%);
+  color: var(--clr-grey);
   font-weight: 400;
 }
 
 .cards {
-  margin-top: 2.5rem;
+  margin-block-start: 2.5rem;
   display: grid;
   gap: 1.8rem;
 }
 
 .item {
-  background: hsl(0, 0%, 100%);
-  border-top: 5px solid var(--accent);
+  display: flex;
+  flex-direction: column;
+  background: var(--clr-white);
+  border-top: 5px solid var(--border-color);
   border-radius: 0.5rem;
   padding: 1.8rem 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  text-align: start;
 }
 
 .one {
-  --accent: hsl(180, 62%, 55%);
+  --border-color: var(--clr-cyan);
 }
 
 .two {
-  --accent: hsl(0, 78%, 62%);
+  --border-color: var(--clr-red);
 }
 
 .three {
-  --accent: hsl(34, 97%, 64%);
+  --border-color: var(--clr-orange);
 }
 
 .four {
-  --accent: hsl(212, 86%, 64%);
+  --border-color: var(--clr-blue);
 }
 
 .item h2 {
-  color: hsl(234, 12%, 34%);
+  color: var(--clr-dark);
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-block-end: 0.5rem;
 }
 
 .item p {
-  color: hsl(212, 6%, 44%);
+  color: var(--clr-grey);
   font-size: 0.875rem;
-  margin-bottom: 2rem;
+  margin-block-end: 2rem;
 }
 
 .item img {
-  width: 50px;
+  width: 3rem;
   height: auto;
-  float: right;
+  align-self: flex-end;
 }
 
 @media (min-width: 1024px) {
   .container {
-    max-width: 1440px;
+    max-width: min(90%, 75rem);
     padding: 4rem 2rem;
   }
 
