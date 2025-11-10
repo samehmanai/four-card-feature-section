@@ -93,7 +93,7 @@ body {
 
 .item p {
   color: var(--clr-grey);
-  font-size: 0.875rem;
+  font-size: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
   margin-block-end: clamp(1rem, 3vw, 2rem);
 }
 
